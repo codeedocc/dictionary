@@ -18,5 +18,5 @@ export const dictionarySlice = createSlice({
   },
 })
 
-export const currencyActions = dictionarySlice.actions
-export const currencyReducer = dictionarySlice.reducer
+export const dictionaryActions = dictionarySlice.actions
+export const dictionaryReducer = dictionarySlice.reducer
