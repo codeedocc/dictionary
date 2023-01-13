@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 interface IInitialState {
-  example: number
+  word: string
 }
 
 const initialState: IInitialState = {
-  example: 0,
+  word: '',
 }
 
 export const dictionarySlice = createSlice({
   name: 'currency',
   initialState,
   reducers: {
-    setExample: (state, action) => {
-      state.example = action.payload
+    setWord: (state, action) => {
+      state.word = action.payload
     },
   },
 })

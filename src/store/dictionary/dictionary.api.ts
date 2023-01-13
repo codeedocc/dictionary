@@ -3,18 +3,15 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const dictionaryApi = createApi({
   reducerPath: 'dictionary/api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api.dictionaryapi.dev/api/v2/entries/en',
+    baseUrl: 'https://api.dictionaryapi.dev/api/v2/entries/en/',
   }),
   endpoints: (build) => ({
-    searchCurrency: build.query({
-      query: () => ({
-        url: 'latest.json',
-        params: {
-          app_id: process.env.REACT_APP_SECRET_KEY,
-        },
+    searchWord: build.query<any, any>({
+      query: (search: string) => ({
+        url: `${search}`,
       }),
     }),
   }),
 })
 
-export const { useSearchCurrencyQuery } = dictionaryApi
+export const { useSearchWordQuery } = dictionaryApi
