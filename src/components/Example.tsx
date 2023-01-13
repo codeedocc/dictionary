@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Meanings: React.FC = () => {
+const Example: React.FC = () => {
   return (
     <div className="meanings-container">
-      <p className="title">Meanings & Defenitions:</p>
+      <p className="title">Example:</p>
       <ul className="content">
         <li>1</li>
         <li>2</li>
@@ -13,4 +13,4 @@ const Meanings: React.FC = () => {
   )
 }
 
-export default Meanings
+export default Example
