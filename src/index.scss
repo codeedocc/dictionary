@@ -3,11 +3,11 @@
   margin: 0;
 }
 
-.container-header {
+.search {
   background-color: rgb(47, 57, 71);
   height: 280px;
 
-  .header-box {
+  .search-box {
     color: #fff;
     text-align: center;
     padding-top: 50px;
@@ -16,7 +16,7 @@
       font-size: 35px;
     }
 
-    .description {
+    .text {
       padding-top: 10px;
       color: #96a0ae;
     }
@@ -25,7 +25,7 @@
       padding: 30px;
     }
 
-    .header-input {
+    .input {
       margin-top: 25px;
       display: flex;
       align-items: center;
@@ -54,7 +54,13 @@
   }
 }
 
-.meanings-container {
+.status {
+  padding-top: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.results {
   padding-top: 20px;
   width: 400px;
   margin: 0 auto;

@@ -6,32 +6,50 @@ import Results from './Results'
 
 const Search: React.FC = () => {
   const { word } = useAppSelector((state) => state.dictionary)
-  const { setWord } = useActions()
+  const { setWord, setInfo, setIsReady } = useActions()
 
   const [fetchWords, { isLoading, isError, data }] = useLazySearchWordQuery()
 
+  console.log(data)
+
+  const clickHandler = (word: string) => {
+    setInfo(word)
+    setIsReady(true)
+
+    return fetchWords(word)
+  }
+
   return (
     <>
-      <div className="container-header">
-        <div className="header-box">
+      <div className="search">
+        <div className="search-box">
           <p className="title">Dictionary</p>
-          <p className="description">Find definitions for word</p>
-          <div className="header-input">
+          <p className="text">Find definitions for word</p>
+          <div className="input">
             <input
               type="text"
               placeholder="Start typing..."
               value={word}
               onChange={(e) => setWord(e.target.value)}
             />
-            <button onClick={() => fetchWords(word)}>Find</button>
+            <button onClick={() => clickHandler(word)}>Find</button>
           </div>
+
           {!isError && data?.length && (
             <p className="result">Result for: {data[0].word}</p>
           )}
         </div>
       </div>
 
-      {isLoading ? <p>Loading...</p> : isError ? <p>Error</p> : <Results />}
+      {isLoading ? (
+        <p className="status">Loading...</p>
+      ) : isError ? (
+        <p className="status">Wrong word, please try again...</p>
+      ) : (
+        <div className="results">
+          <Results />
+        </div>
+      )}
     </>
   )
 }

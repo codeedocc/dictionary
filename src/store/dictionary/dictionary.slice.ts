@@ -2,10 +2,14 @@ import { createSlice } from '@reduxjs/toolkit'
 
 interface IInitialState {
   word: string
+  info: string
+  isReady: boolean
 }
 
 const initialState: IInitialState = {
   word: '',
+  info: '',
+  isReady: false,
 }
 
 export const dictionarySlice = createSlice({
@@ -14,6 +18,12 @@ export const dictionarySlice = createSlice({
   reducers: {
     setWord: (state, action) => {
       state.word = action.payload
+    },
+    setInfo: (state, action) => {
+      state.info = action.payload
+    },
+    setIsReady: (state, action) => {
+      state.isReady = action.payload
     },
   },
 })

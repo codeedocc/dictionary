@@ -5,7 +5,7 @@ import Synonym from './Info/Synonym'
 
 const Results: React.FC = () => {
   return (
-    <div className="meanings-container">
+    <div>
       <Meanings />
       <Example />
       <Synonym />
