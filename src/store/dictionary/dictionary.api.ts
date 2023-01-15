@@ -7,7 +7,7 @@ export const dictionaryApi = createApi({
     baseUrl: 'https://api.dictionaryapi.dev/api/v2/entries/en/',
   }),
   endpoints: (build) => ({
-    searchWord: build.query<ServerResponse, string>({
+    searchWord: build.query<ServerResponse[], string>({
       query: (search: string) => ({
         url: `${search}`,
       }),
