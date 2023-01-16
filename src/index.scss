@@ -65,19 +65,23 @@
   width: 400px;
   margin: 0 auto;
 
-  .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: 400;
-  }
+  .results-box {
+    padding-top: 30px;
 
-  .content {
-    padding-top: 20px;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 400;
+    }
 
-    li {
-      margin-top: 10px;
+    .content {
+      padding-top: 20px;
+
+      li {
+        margin-top: 10px;
+      }
     }
   }
 }

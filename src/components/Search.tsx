@@ -2,15 +2,14 @@ import React from 'react'
 import { useActions } from '../hooks/actions'
 import { useAppSelector } from '../hooks/redux'
 import { useLazySearchWordQuery } from '../store/dictionary/dictionary.api'
-import Results from './Results'
+import Meanings from './Meanings'
+import Synonym from './Synonym'
 
 const Search: React.FC = () => {
   const { word } = useAppSelector((state) => state.dictionary)
   const { setWord, setInfo, setIsReady } = useActions()
 
   const [fetchWords, { isLoading, isError, data }] = useLazySearchWordQuery()
-
-  console.log(data)
 
   const clickHandler = (word: string) => {
     setInfo(word)
@@ -47,7 +46,8 @@ const Search: React.FC = () => {
         <p className="status">Wrong word, please try again...</p>
       ) : (
         <div className="results">
-          <Results />
+          <Meanings />
+          <Synonym />
         </div>
       )}
     </>
