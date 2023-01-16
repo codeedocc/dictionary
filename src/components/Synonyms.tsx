@@ -12,19 +12,23 @@ const Synonyms: React.FC = () => {
   return (
     <>
       {data?.length && (
-        <div className="results-box">
-          <p className="title">Synonyms:</p>
-          {data[0].meanings[0].synonyms
-            .filter((_, id) => id < 4)
-            .map((word, id) => {
-              return (
-                <p className="content" key={id}>
-                  <strong>{id + 1}</strong>. &nbsp;
-                  {word}
-                </p>
-              )
-            })}
-        </div>
+        <>
+          {data[0].meanings[0].synonyms.find((el) => el !== '') && (
+            <div className="results-box">
+              <p className="title">Synonyms:</p>
+              {data[0].meanings[0].synonyms
+                .filter((_, id) => id < 4)
+                .map((word, id) => {
+                  return (
+                    <p className="content" key={id}>
+                      <strong>{id + 1}</strong>. &nbsp;
+                      {word}
+                    </p>
+                  )
+                })}
+            </div>
+          )}
+        </>
       )}
     </>
   )

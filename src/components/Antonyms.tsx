@@ -9,24 +9,26 @@ const Antonyms: React.FC = () => {
     skip: !isReady,
   })
 
-  console.log(data)
-
   return (
     <>
       {data?.length && (
-        <div className="results-box">
-          <p className="title">Antonyms:</p>
-          {data[0].meanings[0].antonyms
-            .filter((_, id) => id < 4)
-            .map((word, id) => {
-              return (
-                <p className="content" key={id}>
-                  <strong>{id + 1}</strong>. &nbsp;
-                  {word}
-                </p>
-              )
-            })}
-        </div>
+        <>
+          {data[0].meanings[0].antonyms.find((el) => el !== '') && (
+            <div className="results-box">
+              <p className="title">Antonyms:</p>
+              {data[0].meanings[0].antonyms
+                .filter((_, id) => id < 4)
+                .map((word, id) => {
+                  return (
+                    <p className="content" key={id}>
+                      <strong>{id + 1}</strong>. &nbsp;
+                      {word}
+                    </p>
+                  )
+                })}
+            </div>
+          )}
+        </>
       )}
     </>
   )
