@@ -67,16 +67,23 @@
         font-size: 20px;
         border: 1px solid rgb(47, 57, 71);
         padding: 10px;
-      }
-
-      button:hover {
         cursor: pointer;
-        background-color: #489cf5d0;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-color: #489cf5d0;
+        }
       }
     }
 
     img {
       width: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.15);
+      }
     }
   }
 }

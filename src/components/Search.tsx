@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useActions } from '../hooks/actions'
 import { useAppSelector } from '../hooks/redux'
 import { useLazySearchWordQuery } from '../store/dictionary/dictionary.api'
@@ -8,7 +8,7 @@ import Definitions from './Definitions'
 import Synonyms from './Synonyms'
 
 const Search: React.FC = () => {
-  const { word } = useAppSelector((state) => state.dictionary)
+  const { word, isReady } = useAppSelector((state) => state.dictionary)
   const { setWord, setInfo, setIsReady } = useActions()
 
   const [fetchWords, { isLoading, isError, data }] = useLazySearchWordQuery()
@@ -16,8 +16,8 @@ const Search: React.FC = () => {
   const clickHandler = (word: string) => {
     setInfo(word)
     setIsReady(true)
-
-    return fetchWords(word)
+    fetchWords(word)
+    setWord('')
   }
 
   return (
@@ -33,15 +33,17 @@ const Search: React.FC = () => {
               value={word}
               onChange={(e) => setWord(e.target.value)}
             />
-            <button onClick={() => clickHandler(word)}>Find</button>
+            <button onClick={() => clickHandler(word)}>Search</button>
           </div>
 
           {!isError && data?.length && (
-            <p className="result">Result for: {data[0].word}</p>
+            <p className="result">Result for: {data[0].word.toUpperCase()}</p>
           )}
           {!isError && data?.length && <Audio />}
         </div>
       </div>
+
+      {!isReady && <p className="status">What word are you looking for? 👀 </p>}
 
       {isLoading ? (
         <p className="status">Loading...</p>
