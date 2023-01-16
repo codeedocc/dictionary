@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useActions } from '../hooks/actions'
 import { useAppSelector } from '../hooks/redux'
 import { useLazySearchWordQuery } from '../store/dictionary/dictionary.api'
 import Antonyms from './Antonyms'
-import Defenitions from './Defenitions'
+import Audio from './Audio'
+import Definitions from './Definitions'
 import Synonyms from './Synonyms'
 
 const Search: React.FC = () => {
@@ -38,6 +39,7 @@ const Search: React.FC = () => {
           {!isError && data?.length && (
             <p className="result">Result for: {data[0].word}</p>
           )}
+          {!isError && data?.length && <Audio />}
         </div>
       </div>
 
@@ -47,7 +49,7 @@ const Search: React.FC = () => {
         <p className="status">Wrong word, please try again...</p>
       ) : (
         <div className="results">
-          <Defenitions />
+          <Definitions />
           <Synonyms />
           <Antonyms />
         </div>
