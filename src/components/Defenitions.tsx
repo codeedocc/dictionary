@@ -14,20 +14,16 @@ const Defenitions: React.FC = () => {
       {data?.length && (
         <div className="results-box">
           <p className="title">Defenitions:</p>
-          <ul className="content">
-            {data[0].meanings.map((el) =>
-              el.definitions
-                .filter((_, id) => id < 4)
-                .map((word, id) => {
-                  return (
-                    <li key={id}>
-                      <strong>{id + 1}</strong>. &nbsp;
-                      {word.definition}
-                    </li>
-                  )
-                })
-            )}
-          </ul>
+          {data[0].meanings[0].definitions
+            .filter((_, id) => id < 4)
+            .map((word, id) => {
+              return (
+                <p className="content" key={id}>
+                  <strong>{id + 1}</strong>. &nbsp;
+                  {word.definition}
+                </p>
+              )
+            })}
         </div>
       )}
     </>

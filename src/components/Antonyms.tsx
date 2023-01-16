@@ -16,20 +16,16 @@ const Antonyms: React.FC = () => {
       {data?.length && (
         <div className="results-box">
           <p className="title">Antonyms:</p>
-          <ul className="content">
-            {data[0].meanings.map((el) =>
-              el.antonyms
-                .filter((_, id) => id < 4)
-                .map((word, id) => {
-                  return (
-                    <li key={id}>
-                      <strong>{id + 1}</strong>. &nbsp;
-                      {word}
-                    </li>
-                  )
-                })
-            )}
-          </ul>
+          {data[0].meanings[0].antonyms
+            .filter((_, id) => id < 4)
+            .map((word, id) => {
+              return (
+                <p className="content" key={id}>
+                  <strong>{id + 1}</strong>. &nbsp;
+                  {word}
+                </p>
+              )
+            })}
         </div>
       )}
     </>
