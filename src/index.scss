@@ -61,12 +61,12 @@
 }
 
 .results {
-  padding-top: 20px;
+  padding-top: 5px;
   width: 400px;
   margin: 0 auto;
 
   .results-box {
-    padding-top: 30px;
+    padding-top: 15px;
 
     .title {
       display: flex;
@@ -77,10 +77,11 @@
     }
 
     .content {
-      padding-top: 20px;
+      padding-top: 10px;
 
       li {
         margin-top: 10px;
+        list-style: none;
       }
     }
   }

@@ -2,8 +2,9 @@ import React from 'react'
 import { useActions } from '../hooks/actions'
 import { useAppSelector } from '../hooks/redux'
 import { useLazySearchWordQuery } from '../store/dictionary/dictionary.api'
-import Meanings from './Meanings'
-import Synonym from './Synonym'
+import Antonyms from './Antonyms'
+import Defenitions from './Defenitions'
+import Synonyms from './Synonyms'
 
 const Search: React.FC = () => {
   const { word } = useAppSelector((state) => state.dictionary)
@@ -46,8 +47,9 @@ const Search: React.FC = () => {
         <p className="status">Wrong word, please try again...</p>
       ) : (
         <div className="results">
-          <Meanings />
-          <Synonym />
+          <Defenitions />
+          <Synonyms />
+          <Antonyms />
         </div>
       )}
     </>

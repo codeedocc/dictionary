@@ -2,7 +2,7 @@ import React from 'react'
 import { useAppSelector } from '../hooks/redux'
 import { useSearchWordQuery } from '../store/dictionary/dictionary.api'
 
-const Meanings: React.FC = () => {
+const Defenitions: React.FC = () => {
   const { info, isReady } = useAppSelector((state) => state.dictionary)
 
   const { data } = useSearchWordQuery(info, {
@@ -15,9 +15,18 @@ const Meanings: React.FC = () => {
         <div className="results-box">
           <p className="title">Defenitions:</p>
           <ul className="content">
-            {data[0].meanings.map((el, id) => {
-              return <li key={id}>{el.definitions[0].definition}</li>
-            })}
+            {data[0].meanings.map((el) =>
+              el.definitions
+                .filter((_, id) => id < 4)
+                .map((word, id) => {
+                  return (
+                    <li key={id}>
+                      <strong>{id + 1}</strong>. &nbsp;
+                      {word.definition}
+                    </li>
+                  )
+                })
+            )}
           </ul>
         </div>
       )}
@@ -25,4 +34,4 @@ const Meanings: React.FC = () => {
   )
 }
 
-export default Meanings
+export default Defenitions
