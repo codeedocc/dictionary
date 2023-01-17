@@ -13,7 +13,7 @@ const initialState: IInitialState = {
 }
 
 export const dictionarySlice = createSlice({
-  name: 'currency',
+  name: 'dictionary',
   initialState,
   reducers: {
     setWord: (state, action) => {

@@ -29,7 +29,7 @@ const Search: React.FC = () => {
           <div className="input">
             <input
               type="text"
-              placeholder="Start typing..."
+              placeholder="Find word..."
               value={word}
               onChange={(e) => setWord(e.target.value)}
             />

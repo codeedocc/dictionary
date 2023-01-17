@@ -54,6 +54,12 @@
         outline: none;
         border: 1px solid rgb(47, 57, 71);
         padding: 10px;
+        @include tablet {
+          font-size: 15px;
+        }
+        @include mobile {
+          font-size: 15px;
+        }
 
         &::placeholder {
           color: #96a0ae;
@@ -69,6 +75,12 @@
         padding: 10px;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
+        @include tablet {
+          font-size: 15px;
+        }
+        @include mobile {
+          font-size: 15px;
+        }
 
         &:hover {
           background-color: #489cf5d0;
@@ -92,6 +104,12 @@
   padding-top: 50px;
   font-size: 30px;
   text-align: center;
+  @include tablet {
+    font-size: 20px;
+  }
+  @include mobile {
+    font-size: 20px;
+  }
 }
 
 .results {
