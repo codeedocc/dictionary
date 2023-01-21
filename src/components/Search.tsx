@@ -5,6 +5,7 @@ import { useLazySearchWordQuery } from '../store/dictionary/dictionary.api'
 import Antonyms from './Antonyms'
 import Audio from './Audio'
 import Definitions from './Definitions'
+import MyLoader from './MyLoader'
 import Synonyms from './Synonyms'
 
 const Search: React.FC = () => {
@@ -46,7 +47,9 @@ const Search: React.FC = () => {
       {!isReady && <p className="status">What word are you looking for? 👀 </p>}
 
       {isLoading ? (
-        <p className="status">Loading...</p>
+        <div className="results">
+          <MyLoader />
+        </div>
       ) : isError ? (
         <p className="status">Wrong word, please try again...</p>
       ) : (
