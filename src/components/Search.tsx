@@ -15,9 +15,9 @@ const Search: React.FC = () => {
   const [fetchWords, { isLoading, isError, data }] = useLazySearchWordQuery()
 
   const clickHandler = (word: string) => {
-    setInfo(word)
-    setIsReady(true)
     fetchWords(word)
+    setIsReady(true)
+    setInfo(word)
     setWord('')
   }
 
