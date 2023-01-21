@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/dictionary/static/css/main.5aa5e1a6.css",
-    "main.js": "/dictionary/static/js/main.35e6f4ad.js",
+    "main.js": "/dictionary/static/js/main.95d325cf.js",
     "static/media/listening.png": "/dictionary/static/media/listening.7f683acc3aed7a49d737.png",
     "index.html": "/dictionary/index.html",
     "main.5aa5e1a6.css.map": "/dictionary/static/css/main.5aa5e1a6.css.map",
-    "main.35e6f4ad.js.map": "/dictionary/static/js/main.35e6f4ad.js.map"
+    "main.95d325cf.js.map": "/dictionary/static/js/main.95d325cf.js.map"
   },
   "entrypoints": [
     "static/css/main.5aa5e1a6.css",
-    "static/js/main.35e6f4ad.js"
+    "static/js/main.95d325cf.js"
   ]
 }
