@@ -47,7 +47,7 @@ const Search: React.FC = () => {
       {!isReady && <p className="status">What word are you looking for? 👀 </p>}
 
       {isLoading ? (
-        <div className="results">
+        <div className="loader">
           <MyLoader />
         </div>
       ) : isError ? (
