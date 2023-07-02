@@ -1,1 +1,1 @@
-Проект: https://codeedocc.github.io/dictionary/
+Проект: https://codeedocc.github.io/dictionary/ 
